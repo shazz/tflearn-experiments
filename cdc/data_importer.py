@@ -28,7 +28,7 @@ def load_data(row_nb):
     if isloaded == False:
         
         na_values = ['    ']
-        data = pd.read_csv("data/2015_BRFSS_extract2.tsv", sep='\t', header=0, na_values=na_values, dtype={'HEIG': str})       
+        data = pd.read_csv("data/2015_BRFSS_extract.tsv", sep='\t', header=0, na_values=na_values, dtype={'HEIG': str})       
         print("data loaded:", data.shape)
         
         # convert to metric system (cm and kg)
@@ -84,4 +84,4 @@ def load_data(row_nb):
     
     print("data loaded in ", time.time() - start_time, "s")
     
-    return X, Y
+    return np.array(X), np.array(Y)
